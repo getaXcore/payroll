@@ -8,7 +8,7 @@ import javax.persistence.Id;
 
 
 @Entity
-class Employee{
+public class Employee{
 	
 	private @Id @GeneratedValue Long id;
 	private String firstname;
@@ -19,7 +19,14 @@ class Employee{
 		// TODO Auto-generated constructor stub
 	}
 	
-	Employee(String firstname,String lastname, String role){
+	public Employee(String firstname,String lastname, String role){
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.role = role;
+	}
+	
+	public Employee(Long id,String firstname,String lastname, String role){
+		this.id = id;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.role = role;
